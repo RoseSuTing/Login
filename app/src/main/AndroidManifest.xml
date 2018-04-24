@@ -66,8 +66,6 @@
         <service
             android:name=".MyService"
             android:process=":SeparateProcess" />
-        the activity should be added here
-        Do that?
     </application>
 
 </manifest>
