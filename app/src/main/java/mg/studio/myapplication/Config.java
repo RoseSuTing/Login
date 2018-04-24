@@ -18,6 +18,10 @@ package mg.studio.myapplication;
 
 
 public class Config {
+    /**
+     * To create an account and to confirm the credentials of the user, I created a server side
+     * Below are the links
+     */
     //Login
     public String URL_LOGIN = "http://mpianatra.com/Courses/api/login.php";
 

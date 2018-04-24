@@ -12,4 +12,6 @@
     <string name="btn_link_to_login">Log into your account.</string>
     <string name="enter_credentials">Enter your credentials.</string>
     <string name="account_created">your account has been created.</string>
+    <string name="title_activity_life_cycle">LifeCycleActivity</string>
+    <string name="info_image">info_image</string>
 </resources>

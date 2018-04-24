@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mg.studio.myapplication">
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -34,6 +34,40 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".LifeCycleActivity"
+            android:label="@string/title_activity_life_cycle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UsernameActivity" />
+        <activity android:name=".Username_FinalActivity" />
+        <activity android:name=".LayoutActivity" />
+        <activity android:name=".Layout_finalActivity" />
+        <activity android:name=".Button_designActivity" />
+        <activity android:name=".Button_IntentActivity" />
+        <activity android:name=".ButtonStartActivityActivity" />
+        <activity android:name=".ButonStart_SecondActivity" />
+        <activity android:name=".ImageButtonActivity" />
+        <activity android:name=".EditTextActivity" />
+        <activity android:name=".RadioListenerActivity" />
+        <activity android:name=".GetColorActivity" />
+        <activity android:name=".GrdientBackgroundActivity" />
+        <activity android:name=".Weather_appActivity" />
+        <activity android:name=".ListviewActivity" />
+        <activity android:name=".AudioRecorderActivity" />
+        <activity android:name=".DataBaseActivity" />
+        <activity android:name=".FragmentOneActivity" />
+        <activity android:name=".WebviewActivity" />
+        <activity android:name=".ServerDemoActivity" />
+        <activity android:name=".APPprivateDirecotryActivity" />
+        <activity android:name=".AssetsFolderActivity" />
+        <activity android:name=".IntentExtraActivity" />
+        <activity android:name=".NewActivityActivity" />
+
+        <service
+            android:name=".MyService"
+            android:process=":SeparateProcess" />
+        the activity should be added here
+        Do that?
     </application>
 
 </manifest>

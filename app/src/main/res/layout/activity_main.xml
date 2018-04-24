@@ -20,7 +20,13 @@
             android:gravity="center"
             android:text="@string/welcome"
             android:textSize="20sp" />
+<ListView
+    android:id="@+id/list_view"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    >
 
+</ListView>
 
 
 

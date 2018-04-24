@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
 
         /**
          * If the user just registered an account from Register.class,
-         * the parcelable should be retrieved
+         * the parcelable should be retrieved (this gets some data from the Register.class, if the re is)
          */
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -83,6 +83,7 @@ public class Login extends AppCompatActivity {
         /**
          * Use the SessionManager class to check whether
          * the user already logged in, is yest  then go to the MainActivity
+         * Read inside the preferences, if the user already logged in before, just redirect into the main
          */
         session = new SessionManager(getApplicationContext());
 
@@ -152,6 +153,18 @@ public class Login extends AppCompatActivity {
 
 
     class OnlineCredentialValidation extends AsyncTask<String, Void, Integer> {
+        /**
+         * There are two main things which we need:
+         * 1-do something in the background, so that we don`t block the UI
+         * 2- Get the result after the background task is completed.
+       * next question?
+         * these are the two we need to
+         * The source code for the php?
+         * You can just connect your applicaton using the server I created, it is live now
+         *
+         * @param strings
+         * @return
+         */
 
         @Override
         protected Integer doInBackground(String... strings) {
