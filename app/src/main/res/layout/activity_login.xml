@@ -79,6 +79,17 @@
         android:onClick="btnRegister"
         android:textColor="@color/white"
         android:textSize="15sp" />
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:text="@string/update"
+            android:textAllCaps="false"
+            android:onClick="btnRegister"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </LinearLayout>

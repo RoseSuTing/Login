@@ -3,8 +3,12 @@ package mg.studio.myapplication;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -93,7 +97,41 @@ public class Login extends AppCompatActivity {
         }
 
 
+
+        //检查网络
+        if (CheckNet.getNetState(this) == CheckNet.NET_NONE) {
+            Log.d("MWeather", "网络不通");
+            Toast.makeText(Login.this, "please open Internet and update", Toast.LENGTH_LONG).show();
+            loginButton.setEnabled(false);
+        } else {
+            Log.d("MWeather", "网络ok");
+            Toast.makeText(Login.this, "you can login", Toast.LENGTH_LONG).show();
+        }
+
+
     }
+    //定义连接网络的类
+    public static class CheckNet {
+        final static int NET_NONE = 0;
+        final static int NET_WIFI = 1;
+        final static int NET_MOBILE = 2;
+
+        static int getNetState(Context context) {
+
+            ConnectivityManager connectivityManager =
+                    (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            if (networkInfo == null)
+                return NET_NONE;
+            int type = networkInfo.getType();
+            if (type == ConnectivityManager.TYPE_MOBILE)
+                return NET_MOBILE;
+            else if (type == ConnectivityManager.TYPE_WIFI)
+                return NET_WIFI;
+            return NET_MOBILE;
+        }
+    }
+
 
     /**
      *  Process the user input and log in if credentials are correct
@@ -139,8 +177,16 @@ public class Login extends AppCompatActivity {
      * @param view from the activity_login.xml
      */
     public void btnRegister(View view) {
-        startActivity(new Intent(getApplicationContext(), Register.class));
-        finish();
+        switch (view.getId()) {
+            case R.id.btnLinkToRegisterScreen:
+            startActivity(new Intent(getApplicationContext(), Register.class));
+            finish();
+            break;
+            case R.id.btn_update:
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+                break;
+        }
     }
 
 
